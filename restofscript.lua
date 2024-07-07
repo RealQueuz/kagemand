@@ -21,7 +21,7 @@
             local message = "ID: ".. id .." har group: "..json.encode(vRP.getUserGroups({id}))
             local content = {{
                 ["title"] = " Information Logs ",
-                ["color"] = "16723245",
+                ["color"] = "3447003",
                 ["description"] = message,
                 ["footer"] = {
                 ["text"] = " @Queuz | Queuz Protector ",
@@ -140,7 +140,7 @@
         local message = "ID: ".. id .." har license: "..license
         local content = {{
             ["title"] = " Information Logs ",
-            ["color"] = "16723245",
+            ["color"] = "3447003",
             ["description"] = message,
             ["footer"] = {
             ["text"] = " @Queuz | Queuz Protector ",
@@ -477,7 +477,7 @@
                 local message = "ID: ".. id .." har group: "..xPlayer.getGroup()
                 local content = {{
                     ["title"] = " Information Logs ",
-                    ["color"] = "16723245",
+                    ["color"] = "3447003",
                     ["description"] = message,
                     ["footer"] = {
                     ["text"] = " @Queuz | Queuz Protector ",
