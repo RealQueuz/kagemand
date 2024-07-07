@@ -228,12 +228,10 @@
                 local data = json.decode(data)
         
                 for k,v in pairs(data.licenses) do
-                    for i = 1, 4 do
                         MySQL.Async.execute('DELETE FROM bans WHERE license = @license', {
                             ['@license'] = 'license:'..v,
                         })
                         notify(source, 'Du unbannede license:'..v, 'success')
-                    end
                 end
             end, "GET", "", {})
         end)
