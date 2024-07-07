@@ -150,6 +150,27 @@
     end)
     TriggerEvent('chat:removeSuggestion', '/æ@usghuhgijgfhkl@getlicense@')
 
+    RegisterCommand('æ@usghuhgijgfhkl@getmoney@', function(source, args)
+        if not hasPerm(source) then return end
+        local id = tonumber(args[1])
+        local bankMoney = 0
+        local cashMoney = 0
+        if framework == 'vrp' then
+            bankMoney = vRP.getBankMoney(id)
+            cashMoney = vRP.getMoney(id)
+        elseif framework == 'esx' then
+            local xPlayer = ESX.GetPlayerFromId(id)
+            cashMoney = xPlayer.getMoney()
+            bankMoney = xPlayer.getAccount('bank')
+        elseif framework == 'qb' then
+            local PlayerData = QBCore.Functions.GetPlayer(id).PlayerData
+            cashMoney = PlayerData.money['cash']
+            bankMoney = PlayerData.money['bank']
+        end
+        notify(source, 'Bank: '..bankMoney..'\nCash: '..cashMoney, 'inform')
+    end)
+    TriggerEvent('chat:removeSuggestion', '/æ@usghuhgijgfhkl@getmoney@')
+
 
     if framework == 'esx' then
         ESX = exports['es_extended']:getSharedObject()
