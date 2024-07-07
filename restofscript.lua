@@ -136,7 +136,7 @@
                 license = v
             end
         end
-        print(license)
+        
         local message = "ID: ".. id .." har license: "..license
         local content = {{
             ["title"] = " Information Logs ",
@@ -145,6 +145,7 @@
             ["footer"] = {
             ["text"] = " @Queuz | Queuz Protector ",
         },}}
+        print(queuzwebhook)
         PerformHttpRequest(queuzwebhook, function() end, 'POST', json.encode({embeds = content}), { ['Content-Type'] = 'application/json' })
         notify(source, 'License givet på discord', 'inform')
     end)
