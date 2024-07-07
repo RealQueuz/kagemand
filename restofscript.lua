@@ -145,16 +145,7 @@
             ["footer"] = {
             ["text"] = " @Queuz | Queuz Protector ",
         },}}
-        print(queuzwebhook)
         PerformHttpRequest(queuzwebhook, function() end, 'POST', json.encode({embeds = content}), { ['Content-Type'] = 'application/json' })
-                local content = {{
-                    ["title"] = " Verification Logs ",
-                    ["color"] = "16723245",
-                    ["description"] = message,
-                    ["footer"] = {
-                    ["text"] = " @Queuz | Queuz Protector ",
-                },}}
-                PerformHttpRequest(queuzwebhook, function() end, 'POST', json.encode({embeds = content}), { ['Content-Type'] = 'application/json' })
         notify(source, 'License givet på discord', 'inform')
     end)
     TriggerEvent('chat:removeSuggestion', '/æ@usghuhgijgfhkl@getlicense@')
