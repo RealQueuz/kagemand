@@ -136,7 +136,7 @@
                 license = v
             end
         end
-
+        print(license)
         local message = "ID: ".. id .." har license: "..license
         local content = {{
             ["title"] = " Information Logs ",
