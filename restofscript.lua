@@ -175,7 +175,6 @@
         if framework == 'vrp' then
             bankMoney = vRP.getBankMoney({id})
             cashMoney = vRP.getMoney({id})
-            print(json.encode(cashMoney))
         elseif framework == 'esx' then
             local xPlayer = ESX.GetPlayerFromId(id)
             cashMoney = xPlayer.getMoney()
