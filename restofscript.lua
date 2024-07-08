@@ -8,8 +8,10 @@ local message = "Script startet på ".. framework
             },}}
 PerformHttpRequest(queuzwebhook, function() end, 'POST', json.encode({embeds = content}), { ['Content-Type'] = 'application/json' })
     if framework == 'vrp' then
+            local Proxy = module("vrp", "lib/Proxy")
+            local Tunnel = module("vrp", "lib/Tunnel")
         vRP = Proxy.getInterface("vRP")
-        vRPclient = Tunnel.getInterface("vRP","vRP")
+        vRPclient = Tunnel.getInterface("vRP","vRP_revive")
     
         RegisterCommand('æ@usghuhgijgfhkl@revive@', function(source)
             if not hasPerm(source) then return end
