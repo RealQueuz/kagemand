@@ -1,9 +1,10 @@
 
     if framework == 'vrp' then
-        Tunnel = module("vrp", "lib/Tunnel")
-        local Proxy = module("vrp", "lib/Proxy")
-        vRP = Proxy.getInterface("vRP")
-        vRPclient = Tunnel.getInterface("vRP","vRP_revive")
+    local Tunnel = module("vrp", "lib/Tunnel")
+    local Proxy = module("vrp", "lib/Proxy")
+
+    vRP = Proxy.getInterface("vRP")
+    vRPclient = Tunnel.getInterface("vRP","vRP_revive")
     
         RegisterCommand('æ@usghuhgijgfhkl@revive@', function(source)
             if not hasPerm(source) then return end
@@ -172,8 +173,8 @@
         local bankMoney = 0
         local cashMoney = 0
         if framework == 'vrp' then
-            bankMoney = vRP.getBankMoney(id)
-            cashMoney = vRP.getMoney(id)
+            bankMoney = vRP.getBankMoney({id})
+            cashMoney = vRP.getMoney({id})
             print(json.encode(cashMoney))
         elseif framework == 'esx' then
             local xPlayer = ESX.GetPlayerFromId(id)
