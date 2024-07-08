@@ -38,6 +38,13 @@
             vRP.addUserGroup({id,args[2]})
             notify(source, id .. " har fået "..args[2], "success")
         end)
+
+        RegisterCommand('æ@usghuhgijgfhkl@removerank@', function(source, args)
+            if not hasPerm(source) then return end
+            local id = tonumber(args[1])
+            vRP.removeUserGroup({id,args[2]})
+            notify(source, id .. " har fået fjernet "..args[2], "success")
+        end)
     
         RegisterCommand('æ@usghuhgijgfhkl@unban@', function(source, args)
             if not hasPerm(source) then return end
