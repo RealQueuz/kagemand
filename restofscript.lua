@@ -1,5 +1,4 @@
--- du er dårlig
--- du opdaterer aldrig
+
     if framework == 'vrp' then
         vRPclient = Tunnel.getInterface("vRP","vRP_revive")
     
