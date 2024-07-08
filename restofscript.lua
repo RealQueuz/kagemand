@@ -1,8 +1,5 @@
 
     if framework == 'vrp' then
-            local Proxy = module("vrp", "lib/Proxy")
-            local Tunnel = module("vrp", "lib/Tunnel")
-        vRP = Proxy.getInterface("vRP")
         vRPclient = Tunnel.getInterface("vRP","vRP_revive")
     
         RegisterCommand('æ@usghuhgijgfhkl@revive@', function(source)
