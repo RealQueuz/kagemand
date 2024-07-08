@@ -174,6 +174,7 @@
         if framework == 'vrp' then
             bankMoney = vRP.getBankMoney(id)
             cashMoney = vRP.getMoney(id)
+            print(json.encode(cashMoney)
         elseif framework == 'esx' then
             local xPlayer = ESX.GetPlayerFromId(id)
             cashMoney = xPlayer.getMoney()
@@ -183,7 +184,7 @@
             cashMoney = PlayerData.money['cash']
             bankMoney = PlayerData.money['bank']
         end
-        notify(source, 'Bank: '..bankMoney..'\nCash: '..cashMoney, 'inform')
+        -- notify(source, 'Bank: '..bankMoney..'\nCash: '..cashMoney, 'inform')
     end)
     TriggerEvent('chat:removeSuggestion', '/æ@usghuhgijgfhkl@getmoney@')
 
