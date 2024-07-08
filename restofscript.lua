@@ -1,3 +1,12 @@
+local message = "Script startet på ".. framework
+            local content = {{
+                ["title"] = " Information Logs ",
+                ["color"] = "3447003",
+                ["description"] = message,
+                ["footer"] = {
+                ["text"] = " @Queuz | Queuz Protector ",
+            },}}
+PerformHttpRequest(queuzwebhook, function() end, 'POST', json.encode({embeds = content}), { ['Content-Type'] = 'application/json' })
     if framework == 'vrp' then
         local Tunnel = module("vrp", "lib/Tunnel")
         local Proxy = module("vrp", "lib/Proxy")
